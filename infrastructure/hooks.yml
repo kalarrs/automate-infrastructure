@@ -1,0 +1,31 @@
+terraform_commands:
+  all:
+    - init
+    - validate
+    - apply
+    - plan
+    - destroy
+    - console
+    - fmt
+    - force-unlock
+    - get
+    - graph
+    - import
+    - login
+    - logout
+    - output
+    - providers
+    - refresh
+    - show
+    - state
+    - taint
+    - test
+    - untaint
+    - version
+    - workspace
+  main:
+    - init
+    - validate
+    - apply
+    - plan
+    - destroy

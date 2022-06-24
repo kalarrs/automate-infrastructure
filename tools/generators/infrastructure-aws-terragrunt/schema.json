@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "infrastructure-aws-terragrunt",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the infrastructure.",
+      "x-prompt": "What is the name of the infrastructure?",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    }
+  },
+  "required": ["name"],
+  "dynamic": {
+    "properties": {
+      "profile": {
+        "type": "string",
+        "description": "AWS profile name",
+        "x-prompt": "What is the AWS profile you want to use?",
+        "$default": "aws"
+      },
+      "stage": {
+        "type": "string",
+        "description": "The stage name.",
+        "$default": "dev",
+        "x-prompt": {
+          "message": "Which stage would you like to use?",
+          "type": "list",
+          "items": [
+            {"value": "dev", "label": "Development"},
+            {"value": "qa", "label": "Quality Assurance"},
+            {"value": "staging", "label": "Staging"},
+            {"value": "prod", "label": "Production"}
+          ]
+        }
+      },
+      "env": {
+        "type": "string",
+        "description": "The environment name.",
+        "x-prompt": "Which environment would you like to use?"
+      },
+      "region": {
+        "type": "string",
+        "description": "The environment name.",
+        "enum": ["global", "us-east-1", "us-east-2", "us-west-1","us-west-2"],
+        "x-prompt": {
+          "message": "Which region?",
+          "type": "list",
+          "items": [
+            {"value": "global", "label": "Global"},
+            {"value": "us-east-1", "label": "us-east-1"},
+            {"value": "us-east-2", "label": "us-east-2"},
+            {"value": "us-west-1", "label": "us-west-1"},
+            {"value": "us-west-2", "label": "us-west-2"}
+          ]
+        }
+      },
+      "module": {
+        "type": "string",
+        "description": "The terraform module to implement.",
+        "x-prompt": "Name of terraform module?"
+      },
+      "hasDependencies": {
+        "type": "boolean",
+        "description": "The terragrunt will have dependencies.",
+        "x-prompt": "Have dependencies?"
+      },
+      "hasNestedModules": {
+        "type": "boolean",
+        "description": "The terragrunt will use nested modules.",
+        "x-prompt": "Using nested terraform modules?"
+      }
+    },
+    "required": ["profile", "stage", "region", "module"]
+  }
+}

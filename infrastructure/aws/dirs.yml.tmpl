@@ -1,0 +1,48 @@
+workspace: '${repo_path}'
+modules: '${repo_path}/terraform/aws'
+layers: '${repo_path}/layers'
+dist: '${repo_path}/dist'
+environments: '${aws_path}/${aws_account}/environments'
+stages:
+  dev:
+    global: '${aws_path}/${aws_account}/stages/dev/global'
+    us-east-1: '${aws_path}/${aws_account}/stages/dev/us-east-1'
+    us-east-2: '${aws_path}/${aws_account}/stages/dev/us-east-2'
+    us-west-1: '${aws_path}/${aws_account}/stages/dev/us-west-1'
+    us-west-2: '${aws_path}/${aws_account}/stages/dev/us-west-2'
+  qa:
+    global: '${aws_path}/${aws_account}/stages/qa/global'
+    us-east-1: '${aws_path}/${aws_account}/stages/qa/us-east-1'
+    us-east-2: '${aws_path}/${aws_account}/stages/qa/us-east-2'
+    us-west-1: '${aws_path}/${aws_account}/stages/qa/us-west-1'
+    us-west-2: '${aws_path}/${aws_account}/stages/qa/us-west-2'
+  staging:
+    global: '${aws_path}/${aws_account}/stages/staging/global'
+    us-east-1: '${aws_path}/${aws_account}/stages/staging/us-east-1'
+    us-east-2: '${aws_path}/${aws_account}/stages/staging/us-east-2'
+    us-west-1: '${aws_path}/${aws_account}/stages/staging/us-west-1'
+    us-west-2: '${aws_path}/${aws_account}/stages/staging/us-west-2'
+  non-prod:
+    global: '${aws_path}/${aws_account}/stages/non-prod/global'
+    us-east-1: '${aws_path}/${aws_account}/stages/non-prod/us-east-1'
+    us-east-2: '${aws_path}/${aws_account}/stages/non-prod/us-east-2'
+    us-west-1: '${aws_path}/${aws_account}/stages/non-prod/us-west-1'
+    us-west-2: '${aws_path}/${aws_account}/stages/non-prod/us-west-2'
+  prod:
+    global: '${aws_path}/${aws_account}/stages/prod/global'
+    us-east-1: '${aws_path}/${aws_account}/stages/prod/us-east-1'
+    us-east-2: '${aws_path}/${aws_account}/stages/prod/us-east-2'
+    us-west-1: '${aws_path}/${aws_account}/stages/prod/us-west-1'
+    us-west-2: '${aws_path}/${aws_account}/stages/prod/us-west-2'
+  shared:
+    global: '${aws_path}/${aws_account}/stages/shared/global'
+    us-east-1: '${aws_path}/${aws_account}/stages/shared/us-east-1'
+    us-east-2: '${aws_path}/${aws_account}/stages/shared/us-east-2'
+    us-west-1: '${aws_path}/${aws_account}/stages/shared/us-west-1'
+    us-west-2: '${aws_path}/${aws_account}/stages/shared/us-west-2'
+  account:
+    global: '${aws_path}/${aws_account}/stages/account/global'
+    us-east-1: '${aws_path}/${aws_account}/stages/account/us-east-1'
+    us-east-2: '${aws_path}/${aws_account}/stages/account/us-east-2'
+    us-west-1: '${aws_path}/${aws_account}/stages/account/us-west-1'
+    us-west-2: '${aws_path}/${aws_account}/stages/account/us-west-2'

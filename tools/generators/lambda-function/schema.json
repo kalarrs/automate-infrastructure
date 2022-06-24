@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "lambda-function",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Function name",
+      "x-prompt": "What name would like to use for the Lambda function?",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "project": {
+      "type": "string",
+      "description": "Project name",
+      "x-prompt": "What project would you like to use?"
+    },
+    "type": {
+      "type": "string",
+      "description": "Lambda Handler Type",
+      "x-prompt": "What type of handler would you like to use?",
+      "enum": ["api-gateway-proxy-handler-v2"]
+    }
+  },
+  "required": ["name", "project", "type"]
+}

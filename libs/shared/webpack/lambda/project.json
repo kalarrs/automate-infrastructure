@@ -1,0 +1,23 @@
+{
+  "root": "libs/shared/webpack/lambda",
+  "sourceRoot": "libs/shared/webpack/lambda/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/shared/webpack/lambda/**/*.js"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/webpack/lambda"],
+      "options": {
+        "jestConfig": "libs/shared/webpack/lambda/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

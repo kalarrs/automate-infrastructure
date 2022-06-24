@@ -1,0 +1,28 @@
+terraform {
+  source = "${local.aws.locals.dirs.modules}<% if(hasNestedModules){ %>/<% } %>/<%= module %>"
+}
+
+include {
+  path = find_in_parent_folders()
+}<% if(hasDependencies){ %>
+
+dependencies {
+  paths = [
+
+  ]
+}
+
+dependency "" {
+  config_path  = ""
+  mock_outputs = {
+
+  }
+}<% } %>
+
+locals {
+  aws = read_terragrunt_config("${get_parent_terragrunt_dir()}/aws.hcl")
+}
+
+inputs = {
+  tags = local.aws.locals.tags
+}

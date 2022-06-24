@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "api-echo": "apps/api/echo",
+    "shared-webpack-lambda": "libs/shared/webpack/lambda"
+  }
+}

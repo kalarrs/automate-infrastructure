@@ -1,0 +1,14 @@
+provider "github" {
+  %{if organization != null}owner = "${organization}"%{endif}
+}
+
+terraform {
+  required_providers {
+    github = {
+      source  = "integrations/github"
+      version = "~> 4.0"
+    }
+  }
+
+  backend "s3" {}
+}

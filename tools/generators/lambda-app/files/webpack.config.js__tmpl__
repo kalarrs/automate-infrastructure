@@ -1,0 +1,5 @@
+module.exports = async (config, options) => {
+  const {<%= type %>} = await import('@kalarrs-automate-infrastructure/shared-webpack-lambda/index.mjs');
+  const getConfig = <%= type %>({dirName: __dirname});
+  return await getConfig(config, options);
+};
